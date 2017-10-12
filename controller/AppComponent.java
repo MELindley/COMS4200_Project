@@ -92,7 +92,7 @@ public class AppComponent {
 
 					try {
 						obj.put("timeStamp", LocalDateTime.now().toString());
-						String port = d.type().name() + d.id().toString() + p.port();
+						String port = d.type().name() + d.id().toString() +"-PortID"+ p.port();
 						obj.put("portID", port);
 				    		obj.put("bytesOut", p.bytesSent());
 					    	obj.put("bytesIn", p.bytesReceived());
