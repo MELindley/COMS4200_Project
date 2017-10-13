@@ -38,26 +38,39 @@ move curl.exe to C:\Windows.
 
 #### Elasticsearch
 Open a command line. 
+
 Navigate to the elastic directory.
+
 Navigate to bin directory.
-run elasticsearch.
+
+run elasticsearch
+
 Open a power shell terminal.
+
 Run: Remove-Item alias:curl.
+
 navigate to the directory containing the ONOS ouptut file.
+
 Run: curl -s -XPOST localhost:9200/sdn_monitoring/1/_bulk --data-binary "@<ONOS_output_filename>.json".
+
 Wait for the data to import.
 
 #### Kibana
 Open a command line .
+
 Navigate to the Kibana directory.
+
 Navigate to the bin directory.
+
 Execute Kibana.bat.
+
 Open your prefered web browser.
+
 Import dashboard.json and visualization.json into Kibana.
+
 Go to the dashboard tab.
+
 Visualize the data.
-
-
 
 ## The Repo
 
