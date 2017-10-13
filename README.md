@@ -25,31 +25,36 @@ Note: The app currently writes network statistics to `~/filename.json` rather th
 
 ### Steps to setting up Elasticsearch and Kibana
 Download Elasticsearch from https://www.elastic.co/jp/downloads/elasticsearch.
+
 Download Kibana from https://www.elastic.co/downloads/kibana.
-Download curl from https://curl.haxx.se/dlwiz/
+
+Download curl from https://curl.haxx.se/dlwiz/.
+
 #### Curl
-Decompress the download 
-move curl.exe to C:\Windows
+Decompress the download.
+
+move curl.exe to C:\Windows.
+
 
 #### Elasticsearch
 Open a command line. 
-Navigate to the elastic directory
-Navigate to bin directory
-run elasticsearch
-Open a power shell terminal
-Run: Remove-Item alias:curl
-navigate to the directory containing the ONOS ouptut file
-Run: curl -s -XPOST localhost:9200/sdn_monitoring/1/_bulk --data-binary "@<ONOS_output_filename>.json"
-Wait for the data to import
+Navigate to the elastic directory.
+Navigate to bin directory.
+run elasticsearch.
+Open a power shell terminal.
+Run: Remove-Item alias:curl.
+navigate to the directory containing the ONOS ouptut file.
+Run: curl -s -XPOST localhost:9200/sdn_monitoring/1/_bulk --data-binary "@<ONOS_output_filename>.json".
+Wait for the data to import.
 
 #### Kibana
-Open a command line 
-Navigate to the Kibana directory
-Navigate to the bin directory
-Execute Kibana.bat
-Open your prefered web browser
-Import dashboard.json and visualization.json into Kibana
-Go to the dashboard tab 
+Open a command line .
+Navigate to the Kibana directory.
+Navigate to the bin directory.
+Execute Kibana.bat.
+Open your prefered web browser.
+Import dashboard.json and visualization.json into Kibana.
+Go to the dashboard tab.
 Visualize the data.
 
 
