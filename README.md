@@ -62,5 +62,7 @@ The folder named 'controller' contains our applications ONOS AppController and t
 ### Data
 This folder contains dummy data we have generated using our ONOS application. This data would normally be sent through to Elasticsearch via the Java REST Client API [5.6], but due to complications, this does not work. As a result, this simulation data has been recorded, and then needs to be feed to Elasticsearch manually, thus simlulating our actual solution.
 
+Note: Use `Simulation_data_3.json` as it is the most recent.
+
 ### Elastic
 This folder contains the required scripts for setting up your Elasticsearch and Kibana dashboards to match our project.
