@@ -1,16 +1,23 @@
 [
   {
-    "_id": "AV8QvNGloieXxvBih0w6",
+    "_id": "34ffd3a0-afd7-11e7-9c8c-d3ba6188afc5",
     "_type": "dashboard",
     "_source": {
-      "title": "SDN Monitoring",
+      "title": "BytesIn & BytesOUt",
       "hits": 0,
-      "description": "",
-      "panelsJSON": "[{\"col\":1,\"id\":\"AV8QpexdoieXxvBih0wx\",\"panelIndex\":1,\"row\":1,\"size_x\":12,\"size_y\":6,\"type\":\"visualization\"},{\"col\":1,\"id\":\"AV8Qrod6oieXxvBih0w4\",\"panelIndex\":2,\"row\":7,\"size_x\":12,\"size_y\":7,\"type\":\"visualization\"}]",
+      "description": "This DashBoard displays the bytes in and bytes out for all ports !",
+      "panelsJSON": "[{\"col\":1,\"id\":\"acd8f010-afd6-11e7-9c8c-d3ba6188afc5\",\"panelIndex\":1,\"row\":1,\"size_x\":6,\"size_y\":8,\"type\":\"visualization\"},{\"col\":7,\"id\":\"d84d82b0-afd6-11e7-9c8c-d3ba6188afc5\",\"panelIndex\":2,\"row\":1,\"size_x\":6,\"size_y\":8,\"type\":\"visualization\"}]",
       "optionsJSON": "{\"darkTheme\":false}",
-      "uiStateJSON": "{\"P-1\":{\"spy\":{\"mode\":{\"name\":null,\"fill\":false}}}}",
+      "uiStateJSON": "{\"P-1\":{\"vis\":{\"legendOpen\":false}},\"P-2\":{\"vis\":{\"legendOpen\":false}}}",
       "version": 1,
-      "timeRestore": false,
+      "timeRestore": true,
+      "timeTo": "Fri Oct 13 2017 06:38:57 GMT+1000",
+      "timeFrom": "Fri Oct 13 2017 06:30:57 GMT+1000",
+      "refreshInterval": {
+        "display": "Off",
+        "pause": false,
+        "value": 0
+      },
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"filter\":[{\"query\":{\"match_all\":{}}}],\"highlightAll\":true,\"version\":true}"
       }
