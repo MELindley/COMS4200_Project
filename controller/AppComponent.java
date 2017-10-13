@@ -112,6 +112,9 @@ public class AppComponent {
 						e.printStackTrace();
 					}*/
 				    log.info("JSON: " + obj.toString());
+				    //add the metadata/action line
+				    output.print("{ \"index\" : { } }\n");
+				    //add the object
 				    output.print(obj.toString());
 				    output.print("\n");
 				    //jsonArray.put(obj);
@@ -140,7 +143,7 @@ public class AppComponent {
         log.info("Started");
        	try {
         	//restClient = RestClient.builder(new HttpHost("10.0.2.2", 9200, "http")).build();
-    		output = new PrintWriter("/home/ubuntu/output_no_array.json");
+    		output = new PrintWriter("/home/ubuntu/output_no_array_with_metadata.json");
         } catch (Exception e) {
 
         }
