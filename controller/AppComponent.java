@@ -79,14 +79,14 @@ public class AppComponent {
     private Iterable<Device> devices = deviceService.getAvailableDevices();
     //private RestClient restClient;
     private PrintWriter output;
-    
-    
+
+
     private class Query implements Runnable {
 	@Override
 	public void run() {
 		while(true) {
 			//log.info("Hello World!");
-			private JSONArray jsonArray = new JSONArray();
+			JSONArray jsonArray = new JSONArray();
 			for (Device d : devices) {
 				List<PortStatistics> portStats = deviceService.getPortDeltaStatistics(d.id());
 				for (PortStatistics p : portStats) {
@@ -115,7 +115,7 @@ public class AppComponent {
 //				    output.print(obj.toString());
 //				    output.print(",");
 				    jsonArray.put(obj);
-				    
+
 
 					//log.info("Time: " + LocalDateTime.now() + "Port " + p.port() + ": sent " + p.bytesSent() + " bytes | Received " + p.bytesReceived() + " bytes");
 				}
