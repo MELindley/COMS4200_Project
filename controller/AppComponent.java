@@ -112,14 +112,14 @@ public class AppComponent {
 						e.printStackTrace();
 					}*/
 				    log.info("JSON: " + obj.toString());
-//				    output.print(obj.toString());
-//				    output.print(",");
-				    jsonArray.put(obj);
+				    output.print(obj.toString());
+				    output.print("\n");
+				    //jsonArray.put(obj);
 
 
 					//log.info("Time: " + LocalDateTime.now() + "Port " + p.port() + ": sent " + p.bytesSent() + " bytes | Received " + p.bytesReceived() + " bytes");
 				}
-				output.print(jsonArray.toString());
+				//output.print(jsonArray.toString());
 				//log.info(d.toString());
 			}
 			try {
@@ -140,7 +140,7 @@ public class AppComponent {
         log.info("Started");
        	try {
         	//restClient = RestClient.builder(new HttpHost("10.0.2.2", 9200, "http")).build();
-    		output = new PrintWriter("/home/ubuntu/output.json");
+    		output = new PrintWriter("/home/ubuntu/output_no_array.json");
         } catch (Exception e) {
 
         }
