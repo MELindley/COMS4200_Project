@@ -24,7 +24,34 @@ The follow will allow you to execute our ONOS application inside the courses Vir
 Note: The app currently writes network statistics to `~/filename.json` rather than sending data to Elasticsearch directly through the Java API. The commands required to send this data are still included in the in the AppComponent.java, just they are commented out. The same goes for the required libraries in the pom.xml file.
 
 ### Steps to setting up Elasticsearch and Kibana
-The follow will allow you to create a Elasticsearch and Kibana application, capable of receiving API messages with data, or capable of receiving data via JSON form from a file.
+Download Elasticsearch from https://www.elastic.co/jp/downloads/elasticsearch.
+Download Kibana from https://www.elastic.co/downloads/kibana.
+Download curl from https://curl.haxx.se/dlwiz/
+#### Curl
+Decompress the download 
+move curl.exe to C:\Windows
+
+#### Elasticsearch
+Open a command line. 
+Navigate to the elastic directory
+Navigate to bin directory
+run elasticsearch
+Open a power shell terminal
+Run: Remove-Item alias:curl
+navigate to the directory containing the ONOS ouptut file
+Run: curl -s -XPOST localhost:9200/sdn_monitoring/1/_bulk --data-binary "@<ONOS_output_filename>.json"
+Wait for the data to import
+
+#### Kibana
+Open a command line 
+Navigate to the Kibana directory
+Navigate to the bin directory
+Execute Kibana.bat
+Open your prefered web browser
+Import dashboard.json and visualization.json into Kibana
+Go to the dashboard tab 
+Visualize the data.
+
 
 
 ## The Repo
