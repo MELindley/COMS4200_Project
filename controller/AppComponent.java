@@ -65,6 +65,7 @@ import java.time.*;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONArray;
 
 
 /**
@@ -78,12 +79,14 @@ public class AppComponent {
     private Iterable<Device> devices = deviceService.getAvailableDevices();
     //private RestClient restClient;
     private PrintWriter output;
-
+    
+    
     private class Query implements Runnable {
 	@Override
 	public void run() {
 		while(true) {
 			//log.info("Hello World!");
+			private JSONArray jsonArray = new JSONArray();
 			for (Device d : devices) {
 				List<PortStatistics> portStats = deviceService.getPortDeltaStatistics(d.id());
 				for (PortStatistics p : portStats) {
@@ -94,8 +97,8 @@ public class AppComponent {
 						obj.put("timeStamp", LocalDateTime.now().toString());
 						String port = d.type().name() + d.id().toString() +"-PortID"+ p.port();
 						obj.put("portID", port);
-				    		obj.put("bytesOut", p.bytesSent());
-					    	obj.put("bytesIn", p.bytesReceived());
+				    	obj.put("bytesOut", p.bytesSent());
+					    obj.put("bytesIn", p.bytesReceived());
 					} catch (JSONException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -109,11 +112,14 @@ public class AppComponent {
 						e.printStackTrace();
 					}*/
 				    log.info("JSON: " + obj.toString());
-				    output.print(obj.toString());
-				    output.print(",");
+//				    output.print(obj.toString());
+//				    output.print(",");
+				    jsonArray.put(obj);
+				    
 
 					//log.info("Time: " + LocalDateTime.now() + "Port " + p.port() + ": sent " + p.bytesSent() + " bytes | Received " + p.bytesReceived() + " bytes");
 				}
+				output.print(jsonArray.toString());
 				//log.info(d.toString());
 			}
 			try {
@@ -134,7 +140,7 @@ public class AppComponent {
         log.info("Started");
        	try {
         	//restClient = RestClient.builder(new HttpHost("10.0.2.2", 9200, "http")).build();
-    		output = new PrintWriter("/home/ubuntu/output.csv");
+    		output = new PrintWriter("/home/ubuntu/output.json");
         } catch (Exception e) {
 
         }
